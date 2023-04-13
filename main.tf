@@ -38,7 +38,7 @@ module "gke" {
       enable_gvnic              = false
       auto_repair               = true
       auto_upgrade              = true
-      service_account           = "project-service-account@<PROJECT ID>.iam.gserviceaccount.com"
+      service_account           = "project-service-account@golden-union-377614.iam.gserviceaccount.com"
       preemptible               = false
       initial_node_count        = 80
     },
