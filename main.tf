@@ -22,6 +22,11 @@ resource "google_app_engine_application_url_dispatch_rules" "web_service" {
   }
 }
 
+resource "google_storage_bucket_object" "picture" {
+  name   = "butterfly01"
+  source = "/images/nature/garden-tiger-moth.jpg"
+  bucket = "image-store"
+}
 resource "google_app_engine_standard_app_version" "admin_v3" {
   version_id = "v3"
   service    = "admin"
@@ -47,10 +52,4 @@ resource "google_app_engine_standard_app_version" "admin_v3" {
 resource "google_storage_bucket" "bucket" {
   name     = "appengine-test-bucket"
   location = "US"
-}
-
-resource "google_storage_bucket_object" "picture" {
-  name   = "butterfly01"
-  source = "/images/nature/garden-tiger-moth.jpg"
-  bucket = "image-store"
 }
